@@ -3,7 +3,7 @@
 ## Install
 0. Clone this repository.
 1. Download original NRL-MSISE00 (C verstion) from [Official site](https://www.brodo.de/space/nrlmsise/).
- Then, extract tar `tar zxvf nrlmsise-_____.tar.gz`, and copy *nrlmsise-00.h*, *nrlmsise-00.c*, and *nrlmsise-00_data.c* to the repository directory, for example, `cp nrlmsise____/nrlmsise-00.h, nrlmsise____/nrlmsise-00.c, and nrlmsise____/nrlmsise-00_data.c .`
+ Then, extract tar `tar zxvf nrlmsise-_____.tar.gz`, and copy *nrlmsise-00.h*, *nrlmsise-00.c*, and *nrlmsise-00_data.c* to the repository directory, for example, `cp nrlmsise____/nrlmsise-00.h nrlmsise____/nrlmsise-00.c nrlmsise____/nrlmsise-00_data.c .`
 2. patch
 ```Tcsh
 % patch -p1 < nrlmsise-00.patch
