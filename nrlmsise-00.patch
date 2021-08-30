@@ -1,0 +1,11 @@
+--- nrlmsise-00-bc9a2fe/nrlmsise-00.c	2019-07-10 01:26:01.000000000 +0900
++++ nrlmsise-00-bc9a2fe.mod/nrlmsise-00.c	2021-08-30 18:06:58.171546328 +0900
+@@ -309,7 +309,7 @@
+ 	double *u;
+ 	double sig, p, qn, un;
+ 	int i, k;
+-	u=malloc(sizeof(double)*(unsigned int)n);
++	u=(double*)malloc(sizeof(double)*(unsigned int)n);
+ 	if (u==NULL) {
+ 		printf("Out Of Memory in spline - ERROR");
+ 		return;
