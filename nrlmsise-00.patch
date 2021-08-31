@@ -1,5 +1,6 @@
+diff -u nrlmsise-00-bc9a2fe/nrlmsise-00.c 33-NRLMSISE00/nrlmsise-00.c
 --- nrlmsise-00-bc9a2fe/nrlmsise-00.c	2019-07-10 01:26:01.000000000 +0900
-+++ nrlmsise-00-bc9a2fe.mod/nrlmsise-00.c	2021-08-30 18:06:58.171546328 +0900
++++ 33-NRLMSISE00/nrlmsise-00.c	2021-08-30 18:06:58.171546328 +0900
 @@ -309,7 +309,7 @@
  	double *u;
  	double sig, p, qn, un;
@@ -9,3 +10,22 @@
  	if (u==NULL) {
  		printf("Out Of Memory in spline - ERROR");
  		return;
+diff -u nrlmsise-00-bc9a2fe/nrlmsise-00.h 33-NRLMSISE00/nrlmsise-00.h
+--- nrlmsise-00-bc9a2fe/nrlmsise-00.h	2019-07-10 01:26:01.000000000 +0900
++++ 33-NRLMSISE00/nrlmsise-00.h	2021-08-31 13:10:59.488671625 +0900
+@@ -22,6 +22,9 @@
+ /* ------------------------------- INPUT ----------------------------- */
+ /* ------------------------------------------------------------------- */
+ 
++#ifndef NRLMSISE_00_H_
++#define NRLMSISE_00_H_
++
+ struct nrlmsise_flags {
+ 	int switches[24];
+ 	double sw[24];
+@@ -220,3 +223,5 @@
+ #else
+ #define __inline_double double
+ #endif
++
++#endif /* NRLMSISE_00_H_ */
