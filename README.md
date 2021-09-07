@@ -12,8 +12,8 @@
 
 4. Test
 ```Tcsh
-% make test_mrlmsise
-% ./test_mrlmsise
+% make test_nrlmsise
+% ./test_nrlmsise
 ```
 
 ## Example of Usage
