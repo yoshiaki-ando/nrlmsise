@@ -42,4 +42,4 @@ test_nrlmsise: test_nrlmsise.o
 	g++ -c $< -Wall -O3
 
 clean:
-	rm -f *.o $(TARGETS) test_nrlmsise
+	rm -f *.o $(TARGET) test_nrlmsise
