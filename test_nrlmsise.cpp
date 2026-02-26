@@ -44,6 +44,8 @@ int main(void){
   Input.ap_a = &Xp; /* 同上 */
 
   Input.alt = 32.5; /* [km] 高度 */
+
+  /*** 単一高度でのデータを標準出力 ***/
   gtd7(&Input, &Flag, &Output);
   for(int i = 0; i < 9; i++){
     std::cout << i << " " << Output.d[i] << std::endl;
@@ -52,7 +54,9 @@ int main(void){
     std::cout << i << " " << Output.t[i] << std::endl;
   }
 
+  /*** 0-110 km の高度をファイルへ ***/
   std::ofstream ofs("msise.dat");
+  std::ofstream ofs2("msise2.dat");
   for(int i = 0; i < 110; i++){
     Input.alt = double(i);
     gtd7(&Input, &Flag, &Output);
@@ -72,11 +76,15 @@ int main(void){
      *      t[1] - [K] 温度
      */
 
+    ofs2 << i << " ";
+    
     double n = 0.0;
     for(int j = 0; j < 5; j++){
       n += Output.d[j];
+      ofs2 << Output.d[j] << " ";
     }
     n += Output.d[6] + Output.d[7]; /* [cm^{-3}] */
+    ofs2 << Output.d[6] << " " << Output.d[7] << " " << Output.t[0] << " " << Output.t[1] << std::endl;
 
     double p = (n*1e6) * kB * Output.t[1];
 
@@ -86,4 +94,5 @@ int main(void){
         << p << std::endl;
   }
   ofs.close();
+  ofs2.close();
 }

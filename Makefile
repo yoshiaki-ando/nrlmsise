@@ -1,6 +1,6 @@
 PREFIX = $(HOME)
 # suffix for library. Use the versioni of Ubuntu
-LIB_SUFFIX = _18
+LIB_SUFFIX = _22
 
 LIB_DIR = $(PREFIX)/lib
 INC_DIR = $(PREFIX)/include
